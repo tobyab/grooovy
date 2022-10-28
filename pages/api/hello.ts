@@ -1,13 +1,20 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next"
+import { NextApiRequest, NextApiResponse } from "next"
+import prisma from "../../utils/prisma"
 
-type Data = {
-  name: string
-}
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse
 ) {
-  res.status(200).json({ name: "John Doe" })
+  const name = "Aretav"
+  const members = ["Hello", "World"]
+
+  if (req.method === "POST") {
+    const groove = await prisma.groove.create({
+      data: {
+        name: req.body.name,
+        createdAt: new Date(),
+        members: members,
+      }
+    })
+  }
 }
