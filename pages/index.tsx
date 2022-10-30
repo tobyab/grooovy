@@ -3,7 +3,6 @@ import Head from "next/head"
 import Link from "next/link"
 
 const Home: NextPage = () => {
-    console.log("hey", process.env.GITHUB_ID)
   return (
       <div className="m-8">
           <div className="grid mt-64 place-items-center space-y-4">
@@ -22,8 +21,8 @@ const Home: NextPage = () => {
                       href="/new"
                   >
                       <button
-                            className="rounded-lg p-4 bg-black text-white mt-8"
-                            >
+                            className="rounded-lg p-4 bg-black text-white mt-8 border hover:bg-white hover:border-black hover:text-black"
+                      >
                           Ready to get groovin&apos;?
                       </button>
                   </Link>
