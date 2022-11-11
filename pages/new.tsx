@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import Link from "next/link"
 import Stage from "../components/onboarding/Stage"
+import Button from "../components/elements/button"
 
 export default function New() {
     const input = useRef(null);
@@ -20,12 +21,11 @@ export default function New() {
                     required
                 />
                 <Link href="/new/two">
-                <button
+                <Button
                     type="submit"
-                    className="p-4 w-48 bg-black text-white rounded-lg"
                 >
+                </Button>
                     Onwards!
-                </button>
                 </Link>
             </form>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"
 import Link from "next/link"
-import Stage from "../../components/onboarding/Stage";
+import Stage from "../../components/onboarding/Stage"
+import Button from "../../components/elements/button"
 
 export default function New() {
     const input = useRef(null);
@@ -19,12 +20,12 @@ export default function New() {
                     className="rounded-lg p-4 w-96 text-center bg-gray-100"
                     required
                 />
-                    <button
+                    <Button
                         type="submit"
                         className="p-4 w-48 bg-black text-white rounded-lg"
                     >
                         Onwards!
-                    </button>
+                    </Button>
                 <p className="text-lg text-gray-500 pt-8">
                     They not groovin&apos; yet?
                 </p>
