@@ -1,7 +1,8 @@
-import { useState, useRef } from "react"
+import { useRef } from "react"
 import Link from "next/link"
 import Stage from "../../components/onboarding/Stage"
 import Button from "../../components/elements/button"
+import { H1 } from "../../components/elements/heading"
 
 export default function New() {
     const input = useRef(null);
@@ -11,7 +12,7 @@ export default function New() {
                 two={true}
             />
         <div className="grid place-items-center mt-32">
-            <h1 className="text-5xl font-medium">Add some people to your groove!</h1>
+            <H1>Add some people to your groove!</H1>
             <form className="mt-16 flex flex-col space-y-4 justify-center place-items-center">
                 <div>
                     <input

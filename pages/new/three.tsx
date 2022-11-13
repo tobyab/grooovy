@@ -1,39 +1,40 @@
 import { useRef } from "react"
 import Link from "next/link"
 import Stage from "../../components/onboarding/Stage"
-import { BsGithub } from "react-icons/bs"
-import { IconContext } from "react-icons"
-import Button, { ButtonWhite } from "../../components/elements/button"
+import Button from "../../components/elements/button"
+import { H1 } from "../../components/elements/heading"
+import copy from "copy-to-clipboard"
+import toast from "react-hot-toast"
 
 export default function New() {
     const input = useRef(null);
+    const url = "https://groove.so/"
+    function copyLink() {
+        copy(url)
+        toast("Copy that!")
+    }
+
     return (
         <div>
-            <IconContext.Provider value={{ color: "black", size: "2em" }}>
-                <Stage
-                    three={true}
-                />
-                <div className="grid place-items-center mt-32">
-                    <h1 className="text-5xl font-medium">Let&apos;s <i>integrate</i>!</h1>
-                    <div className="mt-16 flex flex-col space-y-4 justify-center place-items-center">
-                        <ButtonWhite
-                            className="rounded-lg p-4 w-96 text-center bg-gray-100 text-xl"
+            <Stage
+                three={true}
+            />
+            <div className="grid place-items-center mt-32">
+                <H1><i>W</i>o<i>A</i>h<i>H</i> welcome to your grooove!</H1>
+                <div className="mt-16 flex flex-col space-y-4 justify-center place-items-center">
+                    <Link href="/new/two">
+                        <Button
+                            type="submit"
                         >
-                            <div className="flex">
-                                <BsGithub className="mr-4"/> GitHub
-                            </div>
-                            <span className="text-sm text-gray-600">Don&apos;t worry, all your data is safe!</span>
-                        </ButtonWhite>
-                        <Link href="/new/two">
-                            <Button
-                                type="submit"
-                            >
-                                Let&apos;s get groovin&apos;!
-                            </Button>
-                        </Link>
-                    </div>
+                            Wahoo!
+                        </Button>
+                    </Link>
+                    <p>Pst! If you want to invite more people, just send them this link!</p>
+                    <a onClick={() => copyLink()} className="cursor-pointer">
+                        This link!
+                    </a>
                 </div>
-            </IconContext.Provider>
+            </div>
         </div>
     )
 }
