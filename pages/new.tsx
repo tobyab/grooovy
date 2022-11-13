@@ -1,5 +1,6 @@
-import { useRef, useState } from "react"
-import Link from "next/link"
+import { useRef, useState, useEffect } from "react"
+import { adjectives } from "../components/words/adjectives"
+import { animals } from "../components/words/animals"
 import Stage from "../components/onboarding/Stage"
 import Button from "../components/elements/button"
 
@@ -16,9 +17,12 @@ export type FormState = {
 };
 
 export default function New() {
+    const [idea, setIdea] = useState(``)
     const input = useRef(null);
     const [form, setForm] = useState<FormState>({ state: Form.Initial });
-/*
+
+    useEffect(() => setIdea(`${adjectives[Math.floor(Math.random() * adjectives.length)]}-${animals[Math.floor(Math.random() * animals.length)]}`), [])
+
     const createNew = async (e) => {
         console.log(input);
         e.preventDefault();
@@ -48,7 +52,6 @@ export default function New() {
             state: Form.Success,
         })
     };
- */
 
     return (
         <div>
@@ -73,6 +76,9 @@ export default function New() {
                         </Button>
                     {/*</Link>*/}
                 </form>
+                <p className="mt-4"><>
+                    struggling for ideas? <span className="font-semibold">{idea}</span> has a nice ring to it!
+                </></p>
             </div>
         </div>
     )

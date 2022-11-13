@@ -1,7 +1,7 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import Link from "next/link"
 import Button from "../components/elements/button"
+import { H1 } from "../components/elements/heading"
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
           <div>
-              <h1 className="text-5xl font-medium w-3/4">Literally the groooviest way to manage your code!</h1>
+              <H1 className="w-3/4">Literally the groooviest way to manage your code!</H1>
               <h2 className="text-xl w-1/2 mt-8">Coding is hard.
                   Especially when no one has any idea about what&apos;s going on!
                   Grooovy aims to make coding easier. For everyone.

@@ -1,8 +1,7 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 
-/*
-NextAuth({
+export default NextAuth({
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID,
@@ -10,4 +9,3 @@ NextAuth({
         }),
     ]
 })
-*/
