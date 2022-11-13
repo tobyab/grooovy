@@ -5,11 +5,11 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    const name = "Aretav"
-    const members = ["Hello", "World"]
+    const name = req.body.name
+    const members = req.body.members
 
     if (req.method === "POST") {
-        const groove = await prisma.groove.create({
+        const groove = await prisma.grooove.create({
             data: {
                 name: req.body.name,
                 createdAt: new Date(),

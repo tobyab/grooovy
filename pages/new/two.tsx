@@ -13,19 +13,20 @@ export default function New() {
         <div className="grid place-items-center mt-32">
             <h1 className="text-5xl font-medium">Add some people to your groove!</h1>
             <form className="mt-16 flex flex-col space-y-4 justify-center place-items-center">
-                <input
-                    type="text"
-                    ref={input}
-                    placeholder="Groove name"
-                    className="rounded-lg p-4 w-96 text-center bg-gray-100"
-                    required
-                />
+                <div>
+                    <input
+                        type="text"
+                        ref={input}
+                        placeholder="@toby"
+                        className="rounded-lg p-4 w-96 text-center bg-gray-100 mr-4"
+                        required
+                    />
                     <Button
                         type="submit"
-                        className="p-4 w-48 bg-black text-white rounded-lg"
                     >
                         Onwards!
                     </Button>
+                </div>
                 <p className="text-lg text-gray-500 pt-8">
                     They not groovin&apos; yet?
                 </p>

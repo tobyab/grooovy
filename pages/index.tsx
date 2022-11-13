@@ -4,7 +4,8 @@ import Link from "next/link"
 import Button from "../components/elements/button"
 
 const Home: NextPage = () => {
-  return <div className="m-8">
+  return (
+    <div className="m-8">
       <div className="grid mt-64 place-items-center space-y-4">
         <Head>
             <title>Grooovy</title>
@@ -18,13 +19,14 @@ const Home: NextPage = () => {
                   Grooovy aims to make coding easier. For everyone.
               </h2>
               <Button
-                  className="hover:cursor-not-allowed"
+                  className="hover:cursor-not-allowed mt-8"
               >
                   Ready to get groovin&apos;?
               </Button>
           </div>
       </div>
-  </div>
+    </div>
+  )
 }
 
 export default Home
