@@ -22,6 +22,19 @@ export default function Auth() {
             >
                 Sign in!
             </Button>
+            <p className="my-4 text-gray-600">or</p>
+            <form>
+                <input
+                    type="email"
+                    placeholder="Your email"
+                    className="rounded-lg p-4 w-96 text-center bg-gray-100 mr-4"
+                />
+                <Button
+                    type="submit"
+                >
+                    Send a magic link!
+                </Button>
+            </form>
         </div>
     )
 }

@@ -1,11 +1,33 @@
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
 import Stage from "../../components/onboarding/Stage"
 import Button from "../../components/elements/button"
 import { H1 } from "../../components/elements/heading"
 
+enum Form {
+    Initial,
+    Loading,
+    Success,
+    Error,
+}
+
+type FormState = {
+    state: Form,
+    messsage?: string
+}
+
 export default function New() {
     const input = useRef(null);
+    const [form, setForm] = useState<FormState>({ state: Form.Initial });
+    const members = async (e) => {
+        e.preventDefault();
+        const data = await fetch(`/api/create`, {
+            body: JSON.stringify({
+                body: input.current.value
+            }),
+        })
+    }
+
     return (
         <div>
             <Stage

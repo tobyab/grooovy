@@ -59,7 +59,7 @@ export default function New() {
                 one={true}
             />
             <div className="grid place-items-center mt-32">
-                <h1 className="text-5xl font-medium">Create your groove!</h1>
+                <h1 className="text-5xl font-medium">Create your grooove!</h1>
                 <form className="mt-16 flex justify-center place-items-center">
                     <input
                         type="text"
