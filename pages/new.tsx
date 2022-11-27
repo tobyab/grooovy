@@ -3,18 +3,7 @@ import { adjectives } from "../components/words/adjectives"
 import { animals } from "../components/words/animals"
 import Stage from "../components/onboarding/Stage"
 import Button from "../components/elements/button"
-
-export enum Form {
-    Initial,
-    Loading,
-    Success,
-    Error
-}
-
-export type FormState = {
-    state: Form;
-    message?: string;
-};
+import { FormState, Form } from "../utils/states"
 
 export default function New() {
     const [idea, setIdea] = useState(``)
@@ -76,9 +65,14 @@ export default function New() {
                         </Button>
                     {/*</Link>*/}
                 </form>
-                <p className="mt-4"><>
-                    struggling for ideas? <span className="font-semibold">{idea}</span> has a nice ring to it!
-                </></p>
+                <p className="mt-4">
+                    <>
+                        struggling for ideas? <a 
+                            className="font-semibold" 
+                            onClick={() => console.log("Hey!")}
+                        >{idea}</a> has a nice ring to it!
+                    </>
+                </p>
             </div>
         </div>
     )
