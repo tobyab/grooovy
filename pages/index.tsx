@@ -8,6 +8,7 @@ import Image from "next/image"
 
 const Home: NextPage = () => {
     const { data: session } = useSession()
+
     return (
         <div className="m-8">
             {session &&(
@@ -50,3 +51,14 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+/*
+TODO: come back to this later
+
+async function getStaticProps() {
+    const { data } = prisma.findMany
+    return {
+        props: {}
+    }
+}
+*/
