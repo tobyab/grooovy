@@ -1,25 +1,23 @@
 import Grooove from "../../components/groooves"
-import useSWR from "swr"
-import fetch from "../../utils/fetch"
+import Image from "next/image"
 
 export default function Groove() {
-    const getImage = (async) => {
-        useSWR
-    }
     return (
         <div>
             <div className="fixed top-0 w-screen bg-white border-b p-6 flex">
                 <div className="flex space-x-2">
-                    <img
+                    <Image
                         src={""}
                         className="h-8 w-8"
+                        alt="test"
                     />
-                    <h1 className="text-xl font-medium self-center">{"GroooveName"}</h1>
+                    <h2 className="text-xl font-medium self-center">{"GroooveName"}</h2>
                 </div>
                 <div className="right-0">
-                    <img
+                    <Image
                         src={"UserImage"}
                         className="h-8 w-8 rounded-lg"
+                        alt="test"
                     />
                 </div>
             </div>
